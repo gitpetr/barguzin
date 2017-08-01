@@ -1,0 +1,46 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require font-awesome
+ *= require_self
+ */
+
+
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "bootstrap/_theme"
+
+@media (min-width: 768px)
+  .navbar
+    border-radius: 0
+
+.td-18 
+  width: 18px
+
+.td-right 
+  text-align: right
+
+tr.blocked 
+  td.my-line-through 
+    color: gray
+    text-decoration: line-through
+    a
+      color: gray
+
+.mg-top-24 
+  margin-top: 24px
+
+i.block 
+  color: springgreen
+
+i.unblock 
+  color: darkslategray

@@ -1,0 +1,8 @@
+
+<%= simple_form_for @counterparty do |f| %>
+    <%= f.input :name, autofocus: true, label: 'Название' %>
+    <%= f.collection_select :groups_counterparty_id,  GroupsCounterparty.all, :id, :name, { prompt: "Выбирите группу" }  %>
+    <%= f.input :comment, placeholder: 'Текст', label: 'Описание' %>
+    <%= f.button :submit, 'Сохранить', class: 'btn btn-primary' %>
+    <%= link_to 'Отменить', counterparties_path, class: 'btn btn-default' %>
+<% end %>

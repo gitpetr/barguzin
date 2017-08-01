@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-8">
+    <h1>Номенклатура (<%= @goods.count %>)</h1>
+  </div>
+  <div class="col-xs-4">
+    <div class="pull-right">
+      <%= link_to 'Новый', new_good_path, class: 'btn btn-primary btn-sm mg-top-24' %>
+    </div>
+  </div>
+</div>
+<%= will_paginate @goods, renderer: BootstrapPagination::Rails %>
+<table class="table table-bordered table-hover">
+  <%= render 'goods/thead' %>
+  <%= render 'goods/good' %>
+</table>
+<%= will_paginate @goods, renderer: BootstrapPagination::Rails %>

@@ -1,0 +1,14 @@
+<tbody>
+<% @counterparties.each_with_index do |сounterparty, index| %>
+    <tr>
+      <td class="td-18 td-right"><%= index + 1 %></td>
+      <td class="td-18"><%= link_to icon('fa-edit', 'редактировать'), edit_counterparty_path(сounterparty.id) %></td>
+      <td class="td-18 td-right"><%= сounterparty.id %></td>
+      <td><%= link_to сounterparty.name, counterparty_path(сounterparty) %></td>
+      <td><%= truncate сounterparty.comment %></td>
+      <td><%= сounterparty.groups_counterparty.name %></td>
+      <td class="td-18"><%= link_to icon('fa-trash', 'удалить'), counterparty_path(сounterparty),
+                                    method: :delete, data: {confirm: 'Действительно удалить?'} %></td>
+    </tr>
+<% end %>
+</tbody>

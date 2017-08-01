@@ -1,0 +1,8 @@
+<h1><%= @counterparty.name %></h1>
+<span>Группа: </span><em><%= @counterparty.groups_counterparty.name %></em>
+<p>
+  <%= @counterparty.comment %>
+</p>
+<p>
+  <%= link_to 'Вернуться к списку', counterparties_path, class: 'btn btn-default' %>
+</p>

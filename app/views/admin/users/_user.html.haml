@@ -1,0 +1,22 @@
+- @users.each_with_index do |user, index|
+  %tbody
+    -if user.block?
+      %tr.blocked
+        %td.td-18.td-right= index + 1
+        %td.td-18= link_to icon('fa-edit', 'редактировать'), edit_admin_user_path(user)
+        %td.td-18.td-right= user.id
+        %td.my-line-through
+          = link_to user.username, admin_user_path(user)
+        %td.td-18.my-line-through= link_to user.email, admin_user_path(user)
+        %td.td-18= link_to icon('fa-trash', 'удалить'), admin_user_path(user), method: :delete, data: {confirm: 'Действительно удалить?'}
+        %td.td-18= link_to icon('fa-toggle-on', 'разблокировать'), unblock_admin_user_path(user), method: 'put', class: 'block'
+
+    - else
+      %tr
+        %td.td-18.td-right= index + 1
+        %td.td-18= link_to icon('fa-edit', 'редактировать'), edit_admin_user_path(user)
+        %td.td-18.td-right= user.id
+        %td= link_to user.username, admin_user_path(user)
+        %td.td-18= link_to user.email, admin_user_path(user)
+        %td.td-18= link_to icon('fa-trash', 'удалить'), admin_user_path(user), method: :delete, data: {confirm: 'Действительно удалить?'}
+        %td.td-18= link_to icon('fa-toggle-on block', 'заблокировать'), block_admin_user_path(user), method: 'put', class: 'block'

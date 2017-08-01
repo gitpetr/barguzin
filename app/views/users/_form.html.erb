@@ -1,0 +1,9 @@
+
+<%= simple_form_for @user do |f| %>
+    <%= f.input :username, autofocus: true, label: 'Логин' %>
+    <%= f.input :email, placeholder: 'user@domain.com' %>
+    <%= f.input :password, autocomplete: "off", label: "Пароль: <em> 6 символов минимум </em>".html_safe  %>
+    <%= f.input :password_confirmation, autocomplete: "off", label: 'Введите пароль еще раз' %>
+    <%= f.button :submit, 'Сохранить', class: 'btn btn-primary' %>
+    <%= link_to 'Отменить', users_path, class: 'btn btn-default' %>
+<% end %>

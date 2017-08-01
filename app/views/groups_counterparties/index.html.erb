@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-8">
+    <h1>Группы контрагентов (<%= @groups_counterparties.count %>)</h1>
+  </div>
+  <div class="col-xs-4">
+    <div class="pull-right">
+      <%= link_to 'Новая', new_groups_counterparty_path, class: 'btn btn-primary btn-sm mg-top-24' %>
+    </div>
+  </div>
+</div>
+<%= will_paginate @groups_counterparties, renderer: BootstrapPagination::Rails %>
+<table class="table table-bordered table-hover">
+  <%= render 'groups_counterparties/thead' %>
+  <%= render 'groups_counterparties/groups_counterparty' %>
+</table>
+<%= will_paginate @groups_counterparties, renderer: BootstrapPagination::Rails %>

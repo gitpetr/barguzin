@@ -1,0 +1,7 @@
+
+<%= simple_form_for @groups_counterparty do |f| %>
+    <%= f.input :name, autofocus: true, label: 'Название' %>
+    <%= f.input :comment, placeholder: 'Текст', label: 'Описание' %>
+    <%= f.button :submit, 'Сохранить', class: 'btn btn-primary' %>
+    <%= link_to 'Отменить', groups_counterparties_path, class: 'btn btn-default' %>
+<% end %>

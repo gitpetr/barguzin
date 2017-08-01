@@ -1,0 +1,2 @@
+module GroupsCounterpartiesHelper
+end

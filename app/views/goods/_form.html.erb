@@ -1,0 +1,7 @@
+
+<%= simple_form_for @good do |f| %>
+    <%= f.input :name, autofocus: true, label: 'Название' %>
+    <%= f.input :comment, placeholder: 'Текст', label: 'Описание' %>
+    <%= f.button :submit, 'Сохранить', class: 'btn btn-primary' %>
+    <%= link_to 'Отменить', goods_path, class: 'btn btn-default' %>
+<% end %>

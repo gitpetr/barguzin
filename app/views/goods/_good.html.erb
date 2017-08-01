@@ -1,0 +1,13 @@
+<tbody>
+<% @goods.each_with_index do |good, index| %>
+    <tr>
+      <td class="td-18 td-right"><%= index + 1 %></td>
+      <td class="td-18"><%= link_to icon('fa-edit', 'редактировать'), edit_good_path(good) %></td>
+      <td class="td-18 td-right"><%= good.id %></td>
+      <td><%= link_to good.name, good_path(good) %></td>
+      <td><%= truncate good.comment %></td>
+      <td class="td-18"><%= link_to icon('fa-trash', 'удалить'), good_path(good),
+                                    method: :delete, data: {confirm: 'Действительно удалить?'} %></td>
+    </tr>
+<% end %>
+</tbody>

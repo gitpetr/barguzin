@@ -1,0 +1,13 @@
+<tbody>
+<% @groups_counterparties.each_with_index do |group, index| %>
+    <tr>
+      <td class="td-18 td-right"><%= index + 1 %></td>
+      <td class="td-18"><%= link_to icon('fa-edit', 'редактировать'), edit_groups_counterparty_path(group) %></td>
+      <td class="td-18 td-right"><%= group.id %></td>
+      <td><%= link_to group.name, groups_counterparty_path(group) %></td>
+      <td><%= truncate group.comment %></td>
+      <td class="td-18"><%= link_to icon('fa-trash', 'удалить'), groups_counterparty_path(group),
+                                    method: :delete, data: {confirm: 'Действительно удалить?'} %></td>
+    </tr>
+<% end %>
+</tbody>

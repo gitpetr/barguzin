@@ -1,0 +1,16 @@
+.row
+  .col-xs-8
+    %h1
+      Пользователи
+      = @users.count
+  .col-xs-4
+    .pull-right
+      = link_to 'Новый', new_user_path, class: 'btn btn-primary btn-sm mg-top-24'
+
+%table.table.table-bordered.table-hover
+  = will_paginate @users, renderer: BootstrapPagination::Rails
+  = render 'admin/users/thead'
+  = render 'admin/users/user', locals: {row_index: @row_index}
+= will_paginate @users, renderer: BootstrapPagination::Rails
+
+

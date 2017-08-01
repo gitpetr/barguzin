@@ -1,0 +1,18 @@
+%nav.navbar.navbar-inverse{role: 'navigation'}
+  .container
+    .navbar-header
+      = link_to 'Баргузин', root_path, class: 'navbar-brand'
+    .navbar-collapse.collapse
+      - if user_signed_in?
+        %ul.nav.navbar-nav
+          %li.dropdown{role: 'presentation'}
+            = link_to '#', class: 'dropdown-toggle', 'data-toggle': 'dropdown' do
+              Справочники
+              %span.caret
+            %ul.dropdown-menu
+              %li= link_to 'Пользователи', users_path
+              %li= link_to 'Номенклатура', goods_path
+              %li= link_to 'Контрагенты', counterparties_path
+              %li= link_to 'Группы контрагентов', groups_counterparties_path
+
+      = render partial: 'layouts/user_bar'
