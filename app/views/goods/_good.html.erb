@@ -4,8 +4,9 @@
       <td class="td-18 td-right"><%= index + 1 %></td>
       <td class="td-18 ">
         <% good.pictures.each do |pic| %>
-          <%= link_to image_tag(pic.image.url(:thumb)), good_path(good) %>
+          <%= link_to image_tag(pic.image.url(:thumb)), good_path(good), class: 'go', data: { goid: pic.id } %>
           <%#= pic.image.file.filename %>
+            <%= render 'goods/modal_image', pic: pic %>
         <% end %>
       </td>
 
