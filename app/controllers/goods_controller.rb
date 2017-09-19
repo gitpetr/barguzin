@@ -11,6 +11,7 @@ class GoodsController < ApplicationController
 
   def new
     @good = Good.new
+    @good.pictures.build
   end
 
   def create
@@ -23,6 +24,7 @@ class GoodsController < ApplicationController
   end
 
   def edit
+    @good.pictures.build
   end
 
   def update
@@ -41,7 +43,7 @@ class GoodsController < ApplicationController
   private
 
   def good_params
-    params.require(:good).permit(:name, :comment)
+    params.require(:good).permit(:name, :comment, pictures_attributes: [:image])
   end
 
   def load_model

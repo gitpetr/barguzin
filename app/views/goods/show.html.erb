@@ -1,4 +1,12 @@
 <h1><%= @good.name %></h1>
+
+  <ul class="img">
+    <% @good.pictures.each do |pic| %>
+        <li><%= link_to image_tag(pic.image.url(:intermedia)), pic.image.url %></li>
+        <%#= pic.image.file.filename %>
+    <% end %>
+  </ul>
+<div class="clear"></div>
 <p>
   <%= @good.comment %>
 </p>

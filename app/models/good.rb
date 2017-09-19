@@ -1,5 +1,10 @@
 class Good < ApplicationRecord
+  has_many :pictures, as: :imageable
+  
   validates :name, presence: true
+
+  accepts_nested_attributes_for :pictures
+
   # price
   self.per_page = 5
 end

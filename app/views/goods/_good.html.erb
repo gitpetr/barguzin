@@ -2,6 +2,13 @@
 <% @goods.each_with_index do |good, index| %>
     <tr>
       <td class="td-18 td-right"><%= index + 1 %></td>
+      <td class="td-18 ">
+        <% good.pictures.each do |pic| %>
+          <%= link_to image_tag(pic.image.url(:thumb)), good_path(good) %>
+          <%#= pic.image.file.filename %>
+        <% end %>
+      </td>
+
       <td class="td-18"><%= link_to icon('fa-edit', 'редактировать'), edit_good_path(good) %></td>
       <td class="td-18 td-right"><%= good.id %></td>
       <td><%= link_to good.name, good_path(good) %></td>

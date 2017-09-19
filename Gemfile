@@ -69,3 +69,6 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'haml-rails'
 gem 'noty-rails'
 gem 'pry-rails'
+gem 'carrierwave'
+gem 'mini_magick', '~> 4.8'
+

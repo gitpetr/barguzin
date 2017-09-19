@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912173956) do
+ActiveRecord::Schema.define(version: 20170919031819) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20170912173956) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "image"
+    t.string "imageable_type"
+    t.integer "imageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id"
   end
 
   create_table "pricelist_items", force: :cascade do |t|
