@@ -3,15 +3,16 @@ class BlockingusersController < ApplicationController
 
   def block
     if @user.update block: true
-      flash[:sucsess] = 'Пользователь заблокирован'
+      flash[:success] = 'Пользователь заблокирован'
     else
-      flash[:danger] = 'Не удалось заблокировать пользователя'
+      flash[:error] = 'Не удалось заблокировать пользователя'
     end
     redirect_to users_path
   end
 
   def unblock
     @user.update block: false
+    flash[:success] = 'Пользователь разблокирован'
     redirect_to users_path
   end
 

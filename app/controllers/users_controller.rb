@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update user_params
-      redirect_to users_path
+      redirect_to users_path, success: 'пользователь обновлен'
     else
       render :edit
     end

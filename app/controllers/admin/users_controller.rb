@@ -12,9 +12,8 @@ class Admin::UsersController < Admin::BaseController
 
   def create
     @user = User.new user_params
-
     if @user.save
-      redirect_to admin_users_path
+      redirect_to admin_users_path, notice: 'Пользователь успешно добавлен', type: :success
     else
       render :new
     end
@@ -33,7 +32,7 @@ class Admin::UsersController < Admin::BaseController
 
   def destroy
     @user.destroy
-    redirect_to admin_users_path
+    redirect_to admin_users_path, notice: 'Пользователь успешно удален', type: :success
   end
 
   private

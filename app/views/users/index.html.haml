@@ -5,7 +5,7 @@
       = @users.count
   .col-xs-4
     .pull-right
-      = link_to 'Новый', new_user_path, class: 'btn btn-primary btn-sm mg-top-24'
+      = link_to 'Новый', new_admin_user_path, class: 'btn btn-primary btn-sm mg-top-24'
 
 %table.table.table-bordered.table-hover
   = will_paginate @users, renderer: BootstrapPagination::Rails

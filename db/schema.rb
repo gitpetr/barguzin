@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725081752) do
+ActiveRecord::Schema.define(version: 20170912173956) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "counterparties", force: :cascade do |t|
     t.string "name"
@@ -31,6 +37,24 @@ ActiveRecord::Schema.define(version: 20170725081752) do
   create_table "groups_counterparties", force: :cascade do |t|
     t.string "name"
     t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pricelist_items", force: :cascade do |t|
+    t.integer "pricelist_id"
+    t.integer "good_id"
+    t.decimal "price"
+    t.string "currency"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["good_id"], name: "index_pricelist_items_on_good_id"
+    t.index ["pricelist_id"], name: "index_pricelist_items_on_pricelist_id"
+  end
+
+  create_table "pricelists", force: :cascade do |t|
+    t.date "pricelist_date"
+    t.integer "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

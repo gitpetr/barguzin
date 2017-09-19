@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :users, only: [:index, :show]
+  devise_for :user
 
   resources :counterparties
   resources :groups_counterparties
   resources :goods
 
-  resources :users do
-    member do
-      put 'block', to: 'blockingusers#block'
-      put 'unblock', to: 'blockingusers#unblock'
-    end
-
-    collection do
-      get 'search', to: 'search#show'
-    end
-  end
+  # resources :users do
+  #   member do
+  #     put 'block', to: 'blockingusers#block'
+  #     put 'unblock', to: 'blockingusers#unblock'
+  #   end
+  #
+  #   collection do
+  #     get 'search', to: 'search#show'
+  #   end
+  # end
 
   namespace :admin do
     resources :users do
