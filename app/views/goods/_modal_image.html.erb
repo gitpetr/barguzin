@@ -1,5 +1,5 @@
 <div class='modal_form' id="modal_form_<%= pic.id %>"><!-- Сaмo oкнo -->
   <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->
-  <%= link_to image_tag(pic.image.url(:intermedia)), pic.image.url %>
+  <%= image_tag(pic.image.url(:intermedia)) %>
 </div>
 <div id="overlay"></div><!-- Пoдлoжкa -->
